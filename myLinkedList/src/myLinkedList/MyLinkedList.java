@@ -30,38 +30,89 @@ public class MyLinkedList implements Iterable<String>
 		int k=0;
 		Node temp = head;
 		Node im = new Node(data);
-		Node a,b;
 		
-		while(temp.getNext() != null && k<=index)
+		while(temp.getNext() != null && k<index-1)
 		{
 			temp = temp.getNext();
 			k++;
 		}
-		a=temp.getNext(); 
-		b=im.getNext();
-		b=a;
-			
+	
+		im.setNext(temp.getNext());
+		temp.setNext(im);	
 	}
 	
 	public String get(int index)
 	{
-		return null;
+		int k=0;
+		Node temp = head;
+		
+		while(temp.getNext() != null & k<=index)
+		{
+			if(k==index)
+				break;
+			temp = temp.getNext();
+			k++;
+		}
+		
+		
+		return temp.getData();
 		
 	}
 	
 	public void delete(int index)
 	{
+		int k=0;
+		Node temp = head;
 		
+		while(temp.getNext() != null && k<=index)
+		{
+			
+			if(k==(index-1))
+				break;
+			temp = temp.getNext();
+			k++;
+		}
+		
+		temp.setNext(temp.getNext().getNext());
 	}
 	
 	public void delete(String data)
 	{
+		Node temp = head;
+		Node temp1=head;
 		
+		while(temp.getNext() != null)
+		{
+			if(temp.getData()==data)
+				break;
+			
+			temp1=temp;
+			temp = temp.getNext();
+		}
+	
+		temp1.setNext(temp.getNext());                                                                                                                                                                                         
 	}
 	
 	public void reverse()
 	{
+		Node temp=head;
+		int count =0;
 		
+		int i=0;
+		
+		while(temp.getNext()!=null)
+		{
+			t[i] = temp.getData();
+			System.out.println(t[i]);
+			i++;
+			temp=temp.getNext();
+		}
+		//System.out.println(count);
+		
+//		for(int j= count-1 ; j>0 ; j--)
+//		{
+//				System.out.println(t[i]);
+//		}
 	}
 
 	private class Node {
