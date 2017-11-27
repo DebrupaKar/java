@@ -31,7 +31,6 @@ public class CounterTest {
 				printMessage("Finish Incrementing");
 				}
 			}
-	}
 	
 	public static synchronized void decTotalCount()
 	{
@@ -44,12 +43,13 @@ public class CounterTest {
 			
 			 		e.printStackTrace();
 			 	}
-			
+	
 			totalCount--;
 			
 			printMessage("Finish Decrementing");
 			}
 		}
+	}
 		
 //		public static synchronized void incTotalCount()
 //		{
